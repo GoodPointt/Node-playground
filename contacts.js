@@ -10,6 +10,8 @@ const listContacts = async () => {
 };
 
 const getContactById = async (contactId) => {
+  if (!contactId) throw new Error('⚠️ Incorrect ID data!⚠️');
+
   const contacts = await listContacts();
   const findedContact = contacts.find((contact) => contact.id === contactId);
 
